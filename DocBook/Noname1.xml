@@ -1,5 +1,6 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
-<!-- This document was created with Syntext Serna Free. --><!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "docbookV4.5/docbookx.dtd" []>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" 
+"docbookV4.5/docbookx.dtd" []>
 <article>
   <title>Руководство программиста (Борискин Д. ИПО-14А)</title>
   <section>
@@ -10,7 +11,8 @@
   <title>Сценарий №1</title>
   <section>
     <title>Сценарий использования 1 - Смена хода </title>
-    <para>Сначала ходит игрок 1, после того как игрок 1 поставит либо крестик либо нолик (в зависимости чем играет игрок), будет совершён переход к игроку 2.</para>
+    <para>Сначала ходит игрок 1, после того как игрок 1 поставит либо крестик либо нолик (в зависимости чем играет игрок), 
+	будет совершён переход к игроку 2.</para>
     <para>Для проверки хода используется функция turnchange().</para>
     <programlisting>ffunction turnchange(t) {
     if (change == 1) { 
@@ -29,7 +31,10 @@
 };
    </programlisting>
   </section>
-  <section><title>Сценарий использования 2 - Перерисовка игрового поля</title><para>Игрок ставит крестик либо нолик в любую ячейку игрового поля.</para><para>Игровое поле перерисовывается в зависимости от того чем ходит игрок.</para><programlisting>function change_b1(form) {  
+  <section><title>Сценарий использования 2 - Перерисовка игрового поля</title>
+  <para>Игрок ставит крестик либо нолик в любую ячейку игрового поля.</para>
+  <para>Игровое поле перерисовывается в зависимости от того чем ходит игрок.</para>
+  <programlisting>function change_b1(form) {  
     clicked = 1; 
     changing(clicked); 
     t = turnchange(t);   
@@ -134,6 +139,7 @@ if (empty1==empty2 &amp;&amp; empty2==empty3 &amp;&amp; empty3==0 ||
     empty3==empty5 &amp;&amp; empty5==empty7 &amp;&amp; empty7==0) { 
     alert (&quot;Player 1: YOU WON !!!&quot;); 
     history.go(0) 
+	
 }</programlisting>
   </section>
 </article>
