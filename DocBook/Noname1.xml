@@ -1,0 +1,139 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "docbookV4.5/docbookx.dtd" []>
+<article>
+  <title>Руководство программиста (Борискин Д. ИПО-14А)</title>
+  <section>
+    <title>Игра крестики-нолики.</title>
+    <para>Проект Крестики-нолики позволяет весело проводить свободное время.</para>
+    <para>Проект можно использовать многократно.</para>
+  </section>
+  <title>Сценарий №1</title>
+  <section>
+    <title>Сценарий использования 1 - Смена хода </title>
+    <para>Сначала ходит игрок 1, после того как игрок 1 поставит либо крестик либо нолик (в зависимости чем играет игрок), будет совершён переход к игроку 2.</para>
+    <para>Для проверки хода используется функция turnchange().</para>
+    <programlisting>ffunction turnchange(t) {
+    if (change == 1) { 
+        if (t == 0){ 
+            t = 1; 
+            whogoesnow = &quot;Turn: Player &quot; + 1; 
+        } else { 
+            t = 0; 
+            whogoesnow = &quot;Turn: Player &quot; + 2; 
+        }   
+    } else { 
+        t = t;  
+    } 
+    change = 1; 
+    return (t); 
+};
+   </programlisting>
+  </section>
+  <section><title>Сценарий использования 2 - Перерисовка игрового поля</title><para>Игрок ставит крестик либо нолик в любую ячейку игрового поля.</para><para>Игровое поле перерисовывается в зависимости от того чем ходит игрок.</para><programlisting>function change_b1(form) {  
+    clicked = 1; 
+    changing(clicked); 
+    t = turnchange(t);   
+    form.b1.value = xo; 
+    form.whoseturn.value = whogoesnow; 
+    win(); 
+    return; 
+}; 
+ 
+function change_b2(form) { 
+    clicked = 2; 
+    changing(clicked); 
+    form.b2.value = xo; 
+    t = turnchange(t); 
+    form.whoseturn.value = whogoesnow; 
+    win(); 
+    return; 
+}; 
+  
+function change_b3(form) { 
+    clicked = 3; 
+    changing(clicked); 
+    form.b3.value = xo; 
+    t = turnchange(t); 
+    form.whoseturn.value = whogoesnow;
+    win(); 
+    return; 
+}; 
+  
+function change_b4(form) { 
+    clicked = 4; 
+    changing(clicked); 
+    form.b4.value = xo; 
+    t = turnchange(t); 
+    form.whoseturn.value = whogoesnow; 
+    win(); 
+    return; 
+}; 
+  
+function change_b5(form) { 
+    clicked = 5; 
+    changing(clicked); 
+    form.b5.value = xo; 
+    t = turnchange(t); 
+    form.whoseturn.value = whogoesnow;
+    win(); 
+    return; 
+}; 
+  
+function change_b6(form) { 
+    clicked = 6; 
+    changing(clicked); 
+    form.b6.value = xo; 
+    t = turnchange(t); 
+    form.whoseturn.value = whogoesnow; 
+    win(); 
+    return; 
+}; 
+  
+function change_b7(form) { 
+    clicked = 7; 
+    changing(clicked); 
+    form.b7.value = xo; 
+    t = turnchange(t); 
+    form.whoseturn.value = whogoesnow; 
+    win(); 
+    return; 
+};
+ 
+function change_b8(form) { 
+    clicked = 8; 
+    changing(clicked); 
+    form.b8.value = xo; 
+    t = turnchange(t); 
+    form.whoseturn.value = whogoesnow; 
+    win(); 
+    return; 
+}; 
+  
+function change_b9(form) { 
+    clicked = 9; 
+    changing(clicked); 
+    form.b9.value = xo; 
+    t = turnchange(t); 
+    form.whoseturn.value = whogoesnow; 
+    win(); 
+    return; 
+};
+</programlisting></section>
+  <section>
+    <title>Сценарий использования 3 - Победа игрока 1</title>
+    <para>Игроку 1 удалось выставить 3 крестика либо нолика в ряд .</para>
+    <para>Проверяются ячейки ввода на 3 крестика либо нолика в ряд.</para>
+    <programlisting>function win() { 
+if (empty1==empty2 &amp;&amp; empty2==empty3 &amp;&amp; empty3==0 || 
+    empty4==empty5 &amp;&amp; empty5==empty6 &amp;&amp; empty6==0 || 
+    empty7==empty8 &amp;&amp; empty8==empty9 &amp;&amp; empty9==0 || 
+    empty1==empty4 &amp;&amp; empty4==empty7 &amp;&amp; empty7==0 || 
+    empty2==empty5 &amp;&amp; empty5==empty8 &amp;&amp; empty8==0 || 
+    empty3==empty6 &amp;&amp; empty6==empty9 &amp;&amp; empty9==0 || 
+    empty1==empty5 &amp;&amp; empty5==empty9 &amp;&amp; empty9==0 || 
+    empty3==empty5 &amp;&amp; empty5==empty7 &amp;&amp; empty7==0) { 
+    alert (&quot;Player 1: YOU WON !!!&quot;); 
+    history.go(0) 
+}</programlisting>
+  </section>
+</article>
